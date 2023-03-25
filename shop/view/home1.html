@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateform()
+{
+    if(document.getElementById("admin").checked || document.getElementById("buyer").checked || document.getElementById("seller").checked == false)
+    {
+        document.getElementById("massage1").innerHTML="please select a radio";
+        return false;
+    }   
+}
+</script>
+</head>
+<body>
+    <form onsubmit="return validateform()" method="POST" name="form">
+    Please select your Role:
+        <input type="radio" id="admin" name="role" value="admin">
+        <label for="admin">Admin</label>
+        <input type="radio" id="buyer" name="role" value="buyer">
+        <label for="buyer">Buyer</label>
+        <input type="radio" id="seller" name="role" value="seller">
+        <label for="seller">Seller</label><br>
+        <br>
+        <p id="massage1"></p>
+        <br>
+        <input type="submit" class="submit" name="submit" value="SUBMIT">
+    </form>
+</body>
+</html>
